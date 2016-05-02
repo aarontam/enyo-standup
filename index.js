@@ -29,13 +29,11 @@ app.post('/', function (req, res) {
 			msg: msg,
 			date: Date.now()
 		});
-		res.send();
 
-		// Note: the ephemeral message is sufficient for now
-		// res.send({
-		// 	'response_type': 'in_channel',
-		// 	'text': name + ': ' + msg
-		// });
+		res.send({
+			'response_type': 'in_channel',
+			'text': '*' + name + ':* ' + msg
+		});
 	} else {
 		ref = new Firebase(endpoint);
 		ref.on('value', function (snapshot) {
@@ -45,7 +43,7 @@ app.post('/', function (req, res) {
 
 			for (key in items) {
 				item = items[key];
-				text += '**' + item.name + ':** ' + item.msg + '<br />';
+				text += '*' + item.name + ':* ' + item.msg + '&lt;br /&gt;';
 			}
 
 			res.send({
