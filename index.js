@@ -1,10 +1,15 @@
 var Firebase = require('firebase'),
+	bodyParser = require('body-parser'),
 	express = require('express'),
 	app = express(),
 	username = process.argv[2] || '',
 	password = process.argv[3] || '',
 	port = process.argv[4] || 3000,
 	endpoint = 'https://enyostandup.firebaseio.com/';
+
+app.use(bodyParser.urlencoded({
+	extended: true
+}));
  
 app.post('/', function (req, res) {
 	console.log(req.body);
@@ -75,4 +80,6 @@ app.post('/', function (req, res) {
 	}
 });
  
-app.listen(port);
+app.listen(port, function () {
+	console.log('Listening on port ' + port);
+});
