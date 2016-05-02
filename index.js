@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
 	extended: true
 }));
  
-app.get('/', function (req, res) {
+app.post('/', function (req, res) {
 	var token = req.body.token,
 		name = req.body.user_name,
 		userId = req.body.user_id,
