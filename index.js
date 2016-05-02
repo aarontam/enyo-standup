@@ -6,6 +6,17 @@ var Firebase = require('firebase'),
 	port = process.argv[3] || 3000,
 	endpoint = 'https://enyostandup.firebaseio.com/';
 
+app.use(function(req,res,next){
+    var _send = res.send;
+    var sent = false;
+    res.send = function(data){
+        if(sent) return;
+        _send.bind(res)(data);
+        sent = true;
+    };
+    next();
+});
+
 app.use(bodyParser.urlencoded({
 	extended: true
 }));
