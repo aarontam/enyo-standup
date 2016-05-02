@@ -43,7 +43,7 @@ app.post('/', function (req, res) {
 
 		res.send({
 			'response_type': 'in_channel',
-			'text': '*' + name + ':* ' + msg
+			'text': ''
 		});
 	} else {
 		ref = new Firebase(endpoint);
