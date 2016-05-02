@@ -43,7 +43,7 @@ app.post('/', function (req, res) {
 
 			for (key in items) {
 				item = items[key];
-				text += '*' + item.name + ':* ' + item.msg + '&lt;br /&gt;';
+				text += '*' + item.name + ':* ' + item.msg + '\r\n';
 			}
 
 			res.send({
