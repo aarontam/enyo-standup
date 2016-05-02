@@ -1,0 +1,19 @@
+{
+  "name": "enyo-standup",
+  "version": "1.0.0",
+  "description": "A simple standup helper that utilizes Firebase and exposes a REST API endpoint.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "standup",
+    "firebase"
+  ],
+  "author": "Aaron Tam",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4",
+    "firebase": "^2.4.2"
+  }
+}
